@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منظومة الدكتورة آيه أحمد نجم</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<!-- شاشة الترحيب -->
+<section id="welcome" class="welcome active">
+  <h1>مرحبًا بك في منظومة الدكتورة آيه أحمد نجم</h1>
+  <input type="text" id="userName" placeholder="اكتب اسمك بالكامل">
+  <button id="enterBtn">دخول</button>
+</section>
+
+<!-- Dark Mode Toggle -->
+<button id="darkModeBtn" class="dark-toggle">🌙</button>
+
+<!-- Navigation -->
+<nav class="hidden" id="nav">
+  <button onclick="goTo('goal')">الهدف</button>
+  <button onclick="goTo('data')">البيانات</button>
+  <button onclick="goTo('plan')">النظام</button>
+  <button onclick="goTo('exercise')">التمارين</button>
+  <button onclick="goTo('settings')">الإعدادات</button>
+</nav>
+
+<!-- اختيار الهدف -->
+<section id="goal" class="page">
+  <h2>اختر هدفك</h2>
+  <button class="cut" onclick="setGoal('cut')">🔥 تخسيس صحي</button>
+  <button class="bulk" onclick="setGoal('bulk')">💪 تخين صحي</button>
+</section>
+
+<!-- البيانات + الأمراض + دواء -->
+<section id="data" class="page">
+  <h2>بياناتك الصحية</h2>
+  <input type="number" id="weight" placeholder="الوزن (كجم)">
+  <input type="number" id="height" placeholder="الطول (سم)">
+  <input type="number" id="age" placeholder="العمر">
+  <select id="activity">
+    <option value="1.2">نشاط قليل</option>
+    <option value="1.5">نشاط متوسط</option>
+    <option value="1.8">نشاط عالي</option>
+  </select>
+
+  <h3>هل تعاني من أي من الأمراض التالية؟</h3>
+  <label><input type="checkbox" id="diabetes"> سكري</label><br>
+  <label><input type="checkbox" id="pressure"> ضغط دم</label><br>
+  <label><input type="checkbox" id="heart"> أمراض قلبية</label><br>
+  <label><input type="checkbox" id="digest"> مشاكل هضمية</label><br>
+  <label><input type="checkbox" id="allergy"> حساسية غذائية</label><br>
+
+  <h3>هل تتناول أدوية؟</h3>
+  <label><input type="radio" name="meds" value="yes"> نعم</label>
+  <label><input type="radio" name="meds" value="no" checked> لا</label><br>
+
+  <button onclick="buildPlan()">إنشاء النظام الغذائي</button>
+</section>
+
+<!-- النظام الغذائي -->
+<section id="plan" class="page">
+  <h2>لوحة النظام الغذائي الذكي</h2>
+  <div class="box">
+    <h3>السعرات اليومية</h3>
+    <p id="calories"></p>
+  </div>
+  <div class="box" id="meals"></div>
+  <div class="box">
+    <h3>منتجات مقترحة</h3>
+    <a href="https://amzn.to/XXXX" target="_blank">🛒 شراء من أمازون</a>
+  </div>
+</section>
+
+<!-- التمارين الرياضية -->
+<section id="exercise" class="page">
+  <h2>تمارينك اليومية</h2>
+  <div id="exerciseList"></div>
+</section>
+
+<!-- صفحة الإعدادات والفيديو التعليمي -->
+<section id="settings" class="page">
+  <h2>شرح تفصيلي للموقع والمعمل الغذائي</h2>
+  <video id="tutorialVideo" controls width="80%" poster="video-poster.jpg">
+    <source src="tutorial.mp4" type="video/mp4">
+    متصفحك لا يدعم الفيديو.
+  </video>
+  <p>هذا الفيديو يوضح كيفية استخدام الموقع والنظام الغذائي والتمارين وأدوات Sound Data.</p>
+</section>
+
+<footer>
+  © منظومة الدكتورة آيه أحمد نجم
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
